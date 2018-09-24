@@ -2,32 +2,47 @@
 #include<iostream>
 using namespace std;
 
-/*write a program with a function that takes two int parameters,find the minimum,then returns the minimum*/
+/*write a main function that ask the user to input 2 variables and ask the user what operatiopn does he want to perform.*/
 
-int min(int a,int b){
-int minimum;
-if (a<b){minimum=a;
-        return minimum;}
-     else {minimum=b;
-        return minimum;}
+int sum(int a,int b){
+int sum = a+b;
+return sum;
 }
-/*Goal is the same as above ,but this time ,the function that finds the minimum should be void, and takes a third,pass by reference parameter;then put the minimum in that.*/
+int max(int a,int b){
+if (a>b){int maximum =a;
+return maximum ;}
+else {int maximum=b;
+return maximum;}
+}
 
-void min2(int a,int b,int &c){
-if (a<b){c=a;}
-else {c=b;}
+int min(int a ,int b){
+if (a<b){int minimum =a;
+return minimum;}
+else {int minimum =b;
+return minimum;}
 }
-/* the program should ask the user for two numbers,then call the functios with the numbers as arguments and tell the user the minimum.*/
+
+/*based on this input ,call the required function and display the output*/
+
 int main(){
-    int a,b,c ,minimum;
-cout <<"welcome to the question 4"<<endl;
-cout<<"what is the first number:"<<endl;
+   int a ,b, c , option;
+cout<<" welcome to the question number 5"<<endl;
+cout<<"enter the first number:"<<endl;
 cin>>a;
-cout<<"what is the second number:"<<endl;
+cout<<"enter the second number:"<<endl; 
 cin>>b;
-c=min(a,b);
-cout<<"the minimum of them is "<<c<<endl;
-min2(a,b,minimum);
-cout<<"the minimum is "<<minimum<<endl;
+cout<<"enter the number of operation do you want to perform"<<endl;
+cout<<"1. sum"<<endl;
+cout<<"2. finding maximum"<<endl;
+cout<<"3. finding minimum"<<endl;
+cin>>option;
+if (option==1) {c=sum(a,b);
+   cout<<"the sum of the two numbers is "<<c<<endl;}
+else if (option ==2){c=max(a,b);
+   cout<<"the maximum of the two number is "<<c<<endl;}
+else if (option ==3){c=min(a,b);
+   cout<<"the minimum of the two number is "<<c<<endl;}
+else {cout<<"invalid option!please try again!!!"<<endl;}
 return 0;
 }
+
